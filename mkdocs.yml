@@ -36,6 +36,14 @@ theme:
     - search.share # Allows sharing of search results
     - search.suggest # Provides search suggestions
 
+copyright: Copyright &copy; 2024 Keys
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/keys-i
+      name: My Github
+
 # Markdown Extensions
 markdown_extensions:
   - codehilite
