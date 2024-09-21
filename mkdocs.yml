@@ -86,7 +86,7 @@ markdown_extensions:
   - admonition # Enables warning and note blocks
   - toc:
       title: "On this page"
-      permalink: true
+      permalink: "#"
       toc_depth: 2
 
   - pymdownx.arithmatex # For mathematical formulas
