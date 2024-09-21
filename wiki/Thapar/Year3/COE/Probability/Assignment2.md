@@ -75,13 +75,13 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
   p_rain = 0.2
   p_cloud_and_rain = 0.85
 
-  p_cloudy_given_rain <- 0.85
+  p_cloudy_given_rain = 0.85
 
   # Calculate P(rain and cloudy)
-  p_rain_and_cloudy <- p_rain * p_cloudy_given_rain
+  p_rain_and_cloudy = p_rain * p_cloudy_given_rain
 
   # Calculate conditional probability
-  p_rain_given_cloudy <- conditional_prob(p_rain_and_cloudy, p_cloudy)
+  p_rain_given_cloudy = conditional_prob(p_rain_and_cloudy, p_cloudy)
 
   # Output the result
   cat("Probability of Rain Given Cloudy is: ",p_rain_given_cloudy)
@@ -117,7 +117,7 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
 
   # f.
   quartiles = quantile(iris$Sepal.Length, probs = c(0.25, 0.75))
-  IQR <- quantiles[2] - quantiles[1]
+  IQR = quantiles[2] - quantiles[1]
 
   # g.
   sd(iris$Sepal.Length)

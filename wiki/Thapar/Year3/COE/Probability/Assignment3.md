@@ -6,7 +6,7 @@
   size = 12
   prob = 1/6
 
-  p_7_to_9 <- pbinom(9, size, prob) - pbinom(6, size, prob)
+  p_7_to_9 = pbinom(9, size, prob) - pbinom(6, size, prob)
 
   cat("Probability of getting 7, 8 or 9, 6’s is: ", p_7_to_9)
   ```
@@ -16,7 +16,7 @@
   mean = 72
   sd = 15.2
 
-  p_84_or_more <- 1 - pnorm(84, mean, sd)
+  p_84_or_more = 1 - pnorm(84, mean, sd)
 
   cat("Percentage of students scoring 84 or more in the exam is: ", p_84_or_more * 100)
   ```
@@ -29,7 +29,7 @@
 
   # b. Probability that between 48 and 50 customers arrive between 8AM and 6PM (10 hours)
   # - P(48 <= Y <= 50) = P(Y <= 50) - P(Y <= 47)
-  p_48_to_50 <- ppois(50, lambda_total) - ppois(47, lambda_total)
+  p_48_to_50 = ppois(50, lambda_total) - ppois(47, lambda_total)
 
   cat("Probability that between 48 and 50 customers arrive between 8AM and 6PM is: ", p_48_to_50, "\n")
   ```
@@ -37,12 +37,12 @@
 ## Q4. Suppose in a certain shipment of 250 Pentium processors there are 17 defective processors. A quality control consultant randomly collects 5 processors for inspection to determine whether or not they are defective. Let X denote the number of defectives in the sample. Find the probability of exactly 3 defectives in the sample, that is, find P(X = 3).
   ```R
   # Parameters for the hypergeometric distribution
-  m <- 17   # number of defective processors
-  n <- 250 - 17  # number of non-defective processors
-  k <- 5    # sample size
+  m = 17   # number of defective processors
+  n = 250 - 17  # number of non-defective processors
+  k = 5    # sample size
 
   # P(X = 3) for X ~ Hypergeometric(m = 17, n = 233, k = 5)
-  p_exactly_3_defectives <- dhyper(3, m, n, k)
+  p_exactly_3_defectives = dhyper(3, m, n, k)
 
   cat("Probability of exactly 3 defectives in the sample is: ", p_exactly_3_defectives, "\n")
   ```
@@ -67,10 +67,10 @@
 
   # c. Sketch the cumulative distribution function.
   # Calculate the CDF
-  cdf_values <- pbinom(x_values, n, p)
+  cdf_values = pbinom(x_values, n, p)
 
   # Plot the CDF
-  cdf_values <- pbinom(x_values, n, p)
+  cdf_values = pbinom(x_values, n, p)
 
   plot(x_values, cdf_values, type = "s", lwd = 2, col = "red",
        xlab = "Number of Students Using Wikipedia", ylab = "Cumulative Probability",
