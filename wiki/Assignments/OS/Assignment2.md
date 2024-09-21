@@ -105,26 +105,55 @@ A shell script is a text file that contains a series of commands for a Unix-base
 # This is a comment
 echo "Hello, World!" # This prints Hello, World!
 ```
+
+> - `#!/bin/bash`: Shebang line indicating the script should be run in the Bash shell.
+> - `echo "Hello, World!"`: Command to print text to the terminal.
+
+### Common Commands
+
+#### **Variables:**
+
 ```bash
 NAME="John"
 echo "Hello, $NAME"
 ```
+
+#### **Conditional Statements:**
+
 ```bash
 if [ "$NAME" == "John" ]; then
     echo "Welcome, John!"
 else
     echo "Who are you?"
 fi
-``````bash
+```
+
+#### **Loops:**
+
+```bash
 for i in 1 2 3; do
     echo "Number $i"
 done
-``````bash
+```
+
+#### **Functions:**
+
+```bash
 my_function() {
     echo "This is a function"
 }
 my_function
-``````c
+```
+
+### Running a Shell Script
+
+1. **Create a file:** `touch script.sh`
+2. **Make it executable:** `chmod +x script.sh`
+3. **Run the script:** `./script.sh`
+
+## Q3. Execution of simple C programs using GCC and passing of Command line arguments
+
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 
@@ -143,7 +172,15 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-``````c
+
+```
+
+> To run the above program: <br> > `gcc -o myprogram myprogram.c && ./myprogram hello word 123`
+
+## Q4. Implementation of File System calls:
+
+### (a) Write a program to open an existing file, read its contents, and display them on the console.
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 #include <stdlib.h>
@@ -161,12 +198,17 @@ int main(int argc, char *argv[]) {
     }
 
     char ch;
-    while ((ch = fgetc(file)) != EOF) {
+    while (ch = fgetc(file) != EOF) {
         putchar(ch);
     }
     return 0;
 }
-``````c
+
+```
+
+### (b) Write a program to copy a file specified by the user at runtime. Use command-line arguments to specify the source and destination file names.
+
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 #include <stdlib.h>
@@ -200,7 +242,12 @@ int main(int argc, char *argv[]) {
     fclose(destination);
     return 0;
 }
-``````c
+
+```
+
+### (c) Write a program to create a new file, write a user-specified string into it, and then read the contents of the file and display them.
+
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 #include <stdlib.h>
@@ -213,7 +260,7 @@ int main() {
     scanf("%99s", filename);
 
     printf("Enter Content: ");
-    scanf("%[^\n]", content);
+    scanf("%255[^\n]", content);
 
     FILE *file = fopen(filename, "w");
     if (file == NULL) {
@@ -230,17 +277,22 @@ int main() {
     }
 
     printf("Contents of %s: \n", filename);
-    while(fgets(content, sizeof(content),file)) {
+    while (fgets(content, sizeof(content), file)) {
         printf("%s", content);
     }
 
     fclose(file);
     return 0;
 }
-``````c
+
+```
+
+### (d) Write a program to open a file, count the number of words in the file, and display the count.
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -265,10 +317,15 @@ int main(int argc, char *argv[]) {
         word_count++;
     }
     fclose(file);
-    printf("Number of words in %s: %d\n", argv[1], word_count)
+    printf("Number of words in %s: %d\n", argv[1], word_count);
     return 0;
 }
-``````c
+
+```
+
+### (e) Write a program to implement a simple file encryption and decryption system. Use simple XOR encryption for the purpose of this assignment.
+
+```c
 // Copyright 2024 Keys
 #include <stdio.h>
 #include <stdlib.h>
@@ -333,4 +390,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
 ```

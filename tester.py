@@ -1,143 +1,106 @@
-"""FOR TESTING PURPOSES ONLY"""
 import os
 import re
 import subprocess
 import sys
-import time
 import hashlib
 
-def extract_and_run_code(markdown_folder, output_base_folder):
-    """
-    Extracts C and Bash code blocks from Markdown files in the specified folder,
-    writes them to temporary files, monitors them for changes, and if any change occurs,
-    logs the execution status of each code block to a Q<number>.log file.
-
-    Args:
-        markdown_folder (str): The folder containing Markdown files to process.
-        output_base_folder (str): The base folder where extracted code files will be stored.
-    """
-    # Ensure the base output folder exists
-    os.makedirs(output_base_folder, exist_ok=True)
-    os.makedirs(markdown_folder, exist_ok=True)
-
-    # Regular expression to match code blocks
+def extract_code_blocks(markdown_content):
     code_block_pattern = re.compile(r'```(c|bash)\n(.*?)\n```', re.DOTALL)
-    question_pattern = re.compile(r'##\s*(Q\d+)\.?\s*(.*)')
+    return code_block_pattern.findall(markdown_content)
 
-    # Cache to store the hash of the previous extracted code blocks
-    code_cache = {}
+def extract_question_numbers(markdown_content):
+    question_pattern = re.compile(r'##\s*(Q\d+|Assignment \d+)')
+    return question_pattern.findall(markdown_content)
 
-    while True:
-        # Walk through the markdown folder to find all .md files
-        for root, _, files in os.walk(markdown_folder):
-            for file in files:
-                if file.endswith('.md'):
-                    markdown_file = os.path.join(root, file)
+def generate_output_paths(markdown_file, question_number, sub_question_letter, language):
+    file_base = os.path.splitext(os.path.basename(markdown_file))[0]
+    output_folder = os.path.join("codes", file_base, question_number)
+    os.makedirs(output_folder, exist_ok=True)
+    file_extension = 'sh' if language == 'bash' else 'c'
+    code_filename = os.path.join(output_folder, f'{sub_question_letter}_code.{file_extension}')
+    return code_filename
 
-                    with open(markdown_file, 'r', encoding='utf-8') as md_file:
-                        content = md_file.read()
+def execute_code(language, code_filename):
+    try:
+        if language == 'bash':
+            # Add shebang line to Bash script
+            with open(code_filename, 'r+', encoding='utf-8') as file:
+                content = file.read()
+                if not content.startswith('#!/bin/bash'):
+                    file.seek(0, 0)
+                    file.write('#!/bin/bash\n' + content)
+            
+            # Make the bash script executable
+            subprocess.run(['chmod', '+x', code_filename], check=True)
+            # Run the bash script
+            subprocess.run([code_filename], check=True, capture_output=True, text=True)
+        elif language == 'c':
+            # Compile the C code
+            executable_filename = code_filename[:-2]  # Remove the .c extension
+            subprocess.run(['gcc', code_filename, '-o', executable_filename], check=True)
+            # Run the compiled executable
+            subprocess.run([executable_filename], check=True, capture_output=True, text=True)
+            os.remove(executable_filename)  # Clean up the executable after running
 
-                    matches = code_block_pattern.finditer(content)
-                    questions = question_pattern.findall(content)
+        # Print success message
+        print(f'Successfully executed {code_filename}')
+    except subprocess.CalledProcessError as e:
+        # Print error message
+        print(f'Error executing {code_filename}: {e}')
 
-                    question_number = None
-                    question_idx = 0
+def process_markdown_file(markdown_file):
+    try:
+        with open(markdown_file, 'r', encoding='utf-8') as file:
+            content = file.read()
+    except OSError as e:
+        print(f"Error reading file {markdown_file}: {e}")
+        return
 
-                    for idx, match in enumerate(matches):
-                        language = match.group(1)
-                        code = match.group(2)
+    questions = extract_question_numbers(content)
+    code_blocks = extract_code_blocks(content)
 
-                        # Find the closest preceding question header for the code block
-                        while question_idx < len(questions):
-                            question_start = content.find(questions[question_idx][1])
-                            code_start = match.start()
+    current_question = None
+    sub_question_letter = 'a'
 
-                            if code_start > question_start:
-                                question_number = questions[question_idx][0]
-                                question_idx += 1
-                            else:
-                                break
+    for idx, (language, code) in enumerate(code_blocks):
+        # Determine which question this code block belongs to
+        while len(questions) > 0 and content.find(questions[0]) < content.find(code):
+            current_question = questions.pop(0)
+            sub_question_letter = 'a'
 
-                        if not question_number:
-                            question_number = f'Q{idx+1}'
+        if current_question:
+            question_number = current_question.split('.')[0]  # Get "Q4" from "Q4."
+            code_filename = generate_output_paths(markdown_file, question_number, sub_question_letter, language)
 
-                        # Determine output folder based on md file location and name
-                        relative_path = os.path.relpath(root, markdown_folder)
-                        file_name_without_ext = os.path.splitext(file)[0]
-                        output_folder = os.path.join(output_base_folder, relative_path,
-                                                     file_name_without_ext, question_number)
-                        os.makedirs(output_folder, exist_ok=True)
+            # Check if the code block has changed using a hash
+            code_hash = hashlib.md5(code.encode('utf-8')).hexdigest()
+            if os.path.exists(code_filename):
+                with open(code_filename, 'r', encoding='utf-8') as existing_code_file:
+                    existing_code = existing_code_file.read()
+                existing_code_hash = hashlib.md5(existing_code.encode('utf-8')).hexdigest()
 
-                        file_extension = 'sh' if language == 'bash' else 'c'
-                        filename = os.path.join(output_folder,
-                                                f'{question_number}_code{idx+1}.{file_extension}')
+                if code_hash == existing_code_hash:
+                    print(f"No changes in {code_filename}, skipping execution.")
+                    continue
 
-                        log_filename = os.path.join(output_folder, f'{question_number}.log')
+            with open(code_filename, 'w', encoding='utf-8') as code_file:
+                code_file.write(code)
 
-                        # Calculate the hash of the current code block
-                        current_code_hash = hashlib.md5(code.encode('utf-8')).hexdigest()
+            execute_code(language, code_filename)
 
-                        # Check if the code block has changed
-                        if filename in code_cache:
-                            if code_cache[filename] == current_code_hash:
-                                continue  # No changes detected, skip execution
-                            else:
-                                print(f"Detected change in {filename}, executing again...")
-                        else:
-                            print(f"Executing {filename} for the first time...")
+            # Increment sub_question_letter for the next block within the same question
+            sub_question_letter = chr(ord(sub_question_letter) + 1)
 
-                        code_cache[filename] = current_code_hash  # Update cache
-
-                        # Write the extracted code to a file
-                        with open(filename, 'w', encoding='utf-8') as code_file:
-                            code_file.write(code)
-
-                        # Determine appropriate dummy arguments
-                        if language == 'bash':
-                            dummy_args = ['arg1', 'arg2', 'arg3']
-                        elif language == 'c':
-                            dummy_args = []
-                            if 'argc' in code and 'argv' in code:
-                                if 'fopen' in code or '<filename>' in code:
-                                    # Assume the program requires a filename;
-                                    # use the current C file as input
-                                    dummy_args.append(filename)
-                                dummy_args.extend(['dummy1', 'dummy2'])
-
-                        # Execute the file with dummy arguments and log status
-                        try:
-                            if language == 'bash':
-                                subprocess.run(['bash', filename] + dummy_args, check=True)
-                                status_message = f'Successfully executed {filename}'
-                            elif language == 'c':
-                                # Compile and run the C code with dummy arguments
-                                compiled_filename = os.path.join(output_folder,
-                                                                 f'{question_number}_code{idx+1}')
-                                subprocess.run(['gcc', filename, '-o',
-                                                compiled_filename], check=True)
-
-                                subprocess.run([compiled_filename] + dummy_args, check=True)
-
-                                # Delete the compiled file after execution
-                                os.remove(compiled_filename)
-
-                                status_message = f'Successfully compiled and executed {filename}'
-
-                        except subprocess.CalledProcessError as e:
-                            status_message = f'Error executing {filename}: {e}'
-
-                        # Log the status message
-                        with open(log_filename, 'a', encoding='utf-8') as log_file:
-                            log_file.write(status_message + '\n')
-
-        # Wait for a while before checking again
-        time.sleep(5)  # Check every 5 seconds
+def scan_markdown_folder(markdown_folder):
+    for root, _, files in os.walk(markdown_folder):
+        for file in files:
+            if file.endswith('.md'):
+                process_markdown_file(os.path.join(root, file))
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 tester.py <markdown_folder>")
+        print("Usage: python3 script.py <markdown_folder>")
         sys.exit(1)
 
     MARKDOWN_FOLDER = sys.argv[1]
-    OUTPUT_BASE_FOLDER = 'codes'
-    extract_and_run_code(MARKDOWN_FOLDER, OUTPUT_BASE_FOLDER)
+    scan_markdown_folder(MARKDOWN_FOLDER)
