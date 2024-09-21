@@ -29,7 +29,13 @@ int main() {
     close(fd_dup);
     return 0;
 }
-``````c
+```
+
+## Q2. File Descriptor Redirection Using dup2()
+Write a program that opens a file, redirects stdout to this file using `dup2()`, and then prints a message to stdout. Verify that the message is written to the
+file.
+> **Hint:** Use `open()`, `dup2()`, `printf()`, and `close()` system calls.
+```c
 // Copyright 2024 Keys
 #include<stdio.h>
 #include<fcntl.h>
@@ -53,8 +59,12 @@ int main() {
     close(fd);
     return 0;
 }
+```
 
-``````c
+## Q3. Creating Hard Links Using link()
+Write a program that creates a hard link to an existing file, verifies the creation by checking the inode numbers of both files, and prints a confirmation message.
+> **Hint:** Use `link()`, `stat()`, and `printf()` system calls.
+```c
 // Copyright 2024 Keys
 #include<stdio.h>
 #include<fcntl.h>
@@ -75,8 +85,12 @@ int main() {
         printf("Hard Link inode: %lu\n", statbuf.st_ino);
     return 0;
 }
+```
 
-``````c
+## Q4. Deleting Files Using unlink()
+Write a program that creates a temporary file, deletes it using unlink(), and verifies the deletion by attempting to open the file again and checking for an error. 
+> **Hint:** Use `open()`, `unlink()`, and `open()` system calls.
+```c
 // Copyright 2024 Keys
 #include<stdio.h>
 #include<fcntl.h>

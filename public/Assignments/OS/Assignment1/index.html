@@ -1,0 +1,955 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://keys_i.gitlab.io/assignments/Assignments/OS/Assignment1/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../Assignment10/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Assignment 1 - My Obsidian Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Obsidian Notes" class="md-header__button md-logo" aria-label="My Obsidian Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Obsidian Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assignment 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Obsidian Notes" class="md-nav__button md-logo" aria-label="My Obsidian Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Obsidian Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assignments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table of Content
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Assignment 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Assignment 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q1-introduction-to-various-linux-operating-systems-and-basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. Introduction to Various Linux Operating Systems and Basic Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q1. Introduction to Various Linux Operating Systems and Basic Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#various-linux-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Various Linux Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-linux-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Linux Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment10
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment8
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Assignment9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assignment9
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#q1-introduction-to-various-linux-operating-systems-and-basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q1. Introduction to Various Linux Operating Systems and Basic Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Q1. Introduction to Various Linux Operating Systems and Basic Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#various-linux-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Various Linux Distributions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-linux-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Linux Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="assignment-1">Assignment 1</h1>
+<h2 id="q1-introduction-to-various-linux-operating-systems-and-basic-commands">Q1. Introduction to Various Linux Operating Systems and Basic Commands</h2>
+<h3 id="various-linux-distributions">Various Linux Distributions</h3>
+<p>Linux is an open-source operating system that is widely used for a variety of purposes, including servers, desktops, and embedded systems. It is known for its stability, security, and flexibility. Here are some popular Linux distributions:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Distribution</strong></th>
+<th><strong>Use Case</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ubuntu</strong></td>
+<td>Desktop, server, and cloud computing</td>
+<td>Ubuntu is one of the most popular Linux distributions, especially for beginners. It is user-friendly and has a large community for support.</td>
+</tr>
+<tr>
+<td><strong>Fedora</strong></td>
+<td>Desktop, development, and servers</td>
+<td>Fedora is a cutting-edge Linux distribution that offers the latest software and features. It is the upstream source for Red Hat Enterprise Linux (RHEL).</td>
+</tr>
+<tr>
+<td><strong>Debian</strong></td>
+<td>Server, desktop, and embedded</td>
+<td>Debian is a highly stable and reliable distribution. It is the foundation for many others, including Ubuntu. Debian focuses on free software and quality.</td>
+</tr>
+<tr>
+<td><strong>CentOS</strong></td>
+<td>Server environments</td>
+<td>CentOS was compatible with Red Hat Enterprise Linux (RHEL) and widely used in enterprise environments for stability and security. Now CentOS Stream.</td>
+</tr>
+<tr>
+<td><strong>Arch Linux</strong></td>
+<td>Advanced users, customization</td>
+<td>Arch Linux is a lightweight and flexible distribution that follows a rolling-release model. It is highly customizable and suited for experienced users.</td>
+</tr>
+<tr>
+<td><strong>AlmaLinux</strong></td>
+<td>Server environments</td>
+<td>AlmaLinux is a community-driven replacement for CentOS, aiming to be a stable, production-grade operating system.</td>
+</tr>
+<tr>
+<td><strong>Kali Linux</strong></td>
+<td>Security testing</td>
+<td>Kali Linux is a Debian-based distribution designed for digital forensics and penetration testing, with numerous pre-installed security auditing tools.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basic-linux-commands">Basic Linux Commands</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>pwd</code></strong></td>
+<td>Displays the current directory.</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td><strong><code>ls</code></strong></td>
+<td>Lists files and directories. Options: <code>-l</code> for detailed list, <code>-a</code> to show hidden files.</td>
+<td><code>ls</code>, <code>ls -la</code></td>
+</tr>
+<tr>
+<td><strong><code>cd</code></strong></td>
+<td>Changes the current directory.</td>
+<td><code>cd /home/username/Documents</code></td>
+</tr>
+<tr>
+<td><strong><code>mkdir</code></strong></td>
+<td>Creates a new directory.</td>
+<td><code>mkdir new_directory</code></td>
+</tr>
+<tr>
+<td><strong><code>rmdir</code></strong></td>
+<td>Removes an empty directory.</td>
+<td><code>rmdir new_directory</code></td>
+</tr>
+<tr>
+<td><strong><code>rm</code></strong></td>
+<td>Deletes files or directories. Option: <code>-r</code> to remove directories and their contents recursively.</td>
+<td><code>rm file.txt</code>, <code>rm -r directory/</code></td>
+</tr>
+<tr>
+<td><strong><code>cp</code></strong></td>
+<td>Copies files or directories. Option: <code>-r</code> to copy directories recursively.</td>
+<td><code>cp source.txt destination.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>mv</code></strong></td>
+<td>Moves or renames files or directories.</td>
+<td><code>mv old_name.txt new_name.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>cat</code></strong></td>
+<td>Displays the contents of a file.</td>
+<td><code>cat file.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>nano</code>/<code>vim</code></strong></td>
+<td>Edits files directly from the command line.</td>
+<td><code>nano file.txt</code>, <code>vim file.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>chmod</code></strong></td>
+<td>Changes the permissions of a file or directory. Example: <code>755</code> gives the owner full permissions, others can read/execute.</td>
+<td><code>chmod 755 script.sh</code></td>
+</tr>
+<tr>
+<td><strong><code>chown</code></strong></td>
+<td>Changes the owner of a file or directory.</td>
+<td><code>chown username:groupname file.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>df</code></strong></td>
+<td>Displays the amount of disk space available on the file system. Option: <code>-h</code> for human-readable format.</td>
+<td><code>df -h</code></td>
+</tr>
+<tr>
+<td><strong><code>du</code></strong></td>
+<td>Estimates and displays the disk space used by files and directories. Option: <code>-h</code> for human-readable format.</td>
+<td><code>du -h /home/username/</code></td>
+</tr>
+<tr>
+<td><strong><code>mount</code></strong></td>
+<td>Mounts a file system or device to a specified directory.</td>
+<td><code>mount /dev/sda1 /mnt</code></td>
+</tr>
+<tr>
+<td><strong><code>umount</code></strong></td>
+<td>Unmounts a file system or device.</td>
+<td><code>umount /mnt</code></td>
+</tr>
+<tr>
+<td><strong><code>fsck</code></strong></td>
+<td>Checks and repairs a Linux file system. Must be run with <code>sudo</code>.</td>
+<td><code>sudo fsck /dev/sda1</code></td>
+</tr>
+<tr>
+<td><strong><code>mkfs</code></strong></td>
+<td>Creates a new file system on a device. Example: <code>mkfs.ext4</code> for an ext4 file system.</td>
+<td><code>mkfs.ext4 /dev/sda1</code></td>
+</tr>
+<tr>
+<td><strong><code>blkid</code></strong></td>
+<td>Displays information about block devices, including their UUID and file system type.</td>
+<td><code>blkid /dev/sda1</code></td>
+</tr>
+<tr>
+<td><strong><code>ln</code></strong></td>
+<td>Creates a hard or symbolic link to a file. Option: <code>-s</code> for symbolic (soft) link.</td>
+<td><code>ln -s /path/to/file /path/to/link</code></td>
+</tr>
+<tr>
+<td><strong><code>top</code></strong></td>
+<td>Displays real-time information about running processes.</td>
+<td><code>top</code></td>
+</tr>
+<tr>
+<td><strong><code>ps</code></strong></td>
+<td>Displays information about active processes.</td>
+<td><code>ps aux</code></td>
+</tr>
+<tr>
+<td><strong><code>kill</code></strong></td>
+<td>Terminates a process by its PID (Process ID).</td>
+<td><code>kill 1234</code></td>
+</tr>
+<tr>
+<td><strong><code>grep</code></strong></td>
+<td>Searches for specific text patterns in files.</td>
+<td><code>grep "pattern" file.txt</code></td>
+</tr>
+<tr>
+<td><strong><code>find</code></strong></td>
+<td>Searches for files and directories based on criteria.</td>
+<td><code>find /home -name "file.txt"</code></td>
+</tr>
+<tr>
+<td><strong><code>tar</code></strong></td>
+<td>Archives files into a tarball or extracts them. Option: <code>-xvf</code> to extract files from an archive.</td>
+<td><code>tar -cvf archive.tar directory/</code></td>
+</tr>
+<tr>
+<td><strong><code>sudo</code></strong></td>
+<td>Executes a command with superuser (root) privileges.</td>
+<td><code>sudo apt-get update</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>
