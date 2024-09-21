@@ -1,0 +1,29 @@
+site_name: My Obsidian Notes
+site_url: https://keys_i.gitlab.io/assignments
+site_dir: public
+docs_dir: ./wiki
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - admonition
+  - toc
+  - pymdownx.arithmatex
+  - pymdownx.tilde
+  # Add more extensions as needed
+
+plugins:
+  - search
+  - roamlinks
+  - mermaid2
