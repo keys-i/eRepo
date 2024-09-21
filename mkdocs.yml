@@ -1,33 +1,83 @@
-site_name: My Obsidian Notes
-site_url: https://keys-i.github.io/Assignments
+# Site Information
+site_name: My Online Repository
+site_url: https://keys-i.github.io/eRepo
 site_dir: public
-docs_dir: ./wiki
+docs_dir: ./docs/eRepo
 
+# Theme Configuration
 theme:
   name: material
+  language: en  # Set language to English
+  include_search_page: true
   palette:
-    scheme: slate
+    - scheme: default  # Light mode
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate  # Dark mode
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Inter  # Modern font for body text
+    code: Source Code Pro  # Font for code blocks
+  features:
+    - content.action.view  # View action on content
+    - content.code.annotate  # Allows code annotations
+    - content.code.copy  # Adds copy button to code blocks
+    - content.code.select  # Allows code block selection
+    - content.tabs.link  # Creates links for tabbed content
+    - navigation.expand  # Expands navigation sections
+    - navigation.indexes  # Adds indexes for easier navigation
+    # - navigation.instant  # Disabled as it breaks some JavaScript functionality
+    - navigation.sections  # Shows sections in the navigation
+    - navigation.top  # Adds "Back to top" button
+    - search.highlight  # Highlights search terms in results
+    - search.share  # Allows sharing of search results
+    - search.suggest  # Provides search suggestions
 
+# Markdown Extensions
 markdown_extensions:
-  - footnotes
-  - attr_list
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.details
-  - pymdownx.magiclink
-  - pymdownx.tasklist
-  - pymdownx.emoji
-  - admonition
-  - toc
-  - pymdownx.arithmatex
-  - pymdownx.tilde
-  - pymdownx.arithmatex
-  # Add more extensions as needed
+  - codehilite
+  - md_in_html
+  - def_list
+  - sane_lists
+  - footnotes  # Adds support for footnotes
+  - attr_list  # Allows adding attributes to elements
+  - pymdownx.highlight  # Enhances syntax highlighting
+  - pymdownx.superfences  # Provides advanced code block fencing
+  - pymdownx.details  # Adds collapsible detail/summary blocks
+  - pymdownx.magiclink  # Automatically turns URLs into clickable links
+  - pymdownx.tasklist  # Adds support for task lists
+  - pymdownx.emoji  # Adds emoji support
+  - admonition  # Enables warning and note blocks
+  - toc:
+      permalink: "#"  # Adds permalinks to headings for easier sharing
+  - pymdownx.arithmatex  # For mathematical formulas
+  - pymdownx.tilde  # Enables strikethroughs
+    # Add more extensions as needed
 
+# Extra JavaScript for enhanced functionality
 extra_javascript:
-  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"  # Math rendering
+  - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js  # jQuery support
+  - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js  # Charting support via ECharts
+  - assets/javascripts/interactive_graph.js  # Custom interactive graph script
+  - assets/javascripts/obsidian_tags.js  # Custom CSS for Obsidian tags
 
+# Extra CSS for custom styling
+extra_css:
+  - assets/stylesheets/interactive_graph.css  # Styling for interactive graph
+  - assets/stylesheets/obsidian_tags.css  # Obsidian-style tags
+  # - assets/stylesheets/custom_theme.css  # Optional: Add custom theme styles
+
+# Plugins for added functionality
 plugins:
-  - search
-  - roamlinks
-  - mermaid2
+  - search  # Enables search functionality across the site
+  - callouts
+  - obsidian-support
+  - obsidian-interactive-graph  # Interactive graph functionality for visualizing connections
+  - mermaid2  # Adds diagram support using Mermaid
+  - minify:  # Optional: Minifies HTML for faster loading
+      minify_html: true
+  # Add more plugins as needed, such as mkdocs-git-revision-date for versioning

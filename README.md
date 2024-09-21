@@ -1,17 +1,17 @@
-[![website](https://github.com/keys-i/Assignments/actions/workflows/main.yml/badge.svg?cache=clear)](https://github.com/keys-i/Assignments/actions/workflows/main.yml)
-# Assignments Documentation
+[![website](https://github.com/keys-i/eRepo/actions/workflows/main.yml/badge.svg?cache=clear)](https://github.com/keys-i/eRepo/actions/workflows/main.yml)
+# eRepo Documentation
 
-Welcome to the documentation for the assignments. This repository contains MkDocs documentation for various assignments. Here you'll find information on how to build and deploy the documentation, as well as details about the assignments themselves.
+Welcome to the documentation for eRepo, an online repository of resources. This repository serves as a central hub for various materials, including assignments, projects, and more. Here you'll find details on how to set up, build, and deploy the repository's resources and documentation.
 
 ## Overview
 
-This repository uses MkDocs to generate documentation for assignments. MkDocs is a static site generator that's geared towards project documentation.
+eRepo uses MkDocs to generate a clean, static site for organizing and displaying resources. MkDocs is a straightforward, project-focused documentation generator.
 
 ## Getting Started
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
+Ensure you have the following installed before diving into eRepo:
 
 - [Python](https://www.python.org/downloads/)
 - [pip](https://pip.pypa.io/en/stable/installation/)
@@ -22,8 +22,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/keys-i/Assignments.git
-   cd Assignments
+   git clone https://github.com/keys-i/eRepo.git
+   cd eRepo
    ```
 
 2. **Install dependencies:**
@@ -33,9 +33,9 @@ Before you begin, ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-### Building the Documentation
+### Building the Resources
 
-To build the documentation locally:
+To build the resources and documentation locally:
 
 1. **Run the MkDocs build command:**
 
@@ -51,25 +51,25 @@ To build the documentation locally:
    mkdocs serve
    ```
 
-   This will start a local server and you can view the documentation at `http://127.0.0.1:8000/`.
+   View the site at `http://127.0.0.1:8000/` for a live preview.
 
 ## Deployment
 
-The documentation is automatically deployed to GitHub Pages on push to the `main` branch. The workflow for deployment is defined in the GitHub Actions workflow file located in `.github/workflows/deploy.yml`.
+eRepo is set up for automatic deployment to GitHub Pages. Each time a change is pushed to the `main` branch, the repository’s GitHub Actions workflow handles the deployment process.
 
 ### GitHub Actions Workflow
 
 The GitHub Actions workflow includes steps for:
 
-- Checking out the code.
+- Checking out the repository.
 - Setting up Python.
-- Installing dependencies.
+- Installing the required dependencies.
 - Building the MkDocs site.
-- Deploying the site to GitHub Pages.
+- Deploying the static site to GitHub Pages.
 
 ## Contribution
 
-If you want to contribute to this repository, please follow these steps:
+If you'd like to contribute to eRepo, here's how:
 
 1. **Fork the repository.**
 2. **Create a new branch:**
@@ -82,10 +82,10 @@ If you want to contribute to this repository, please follow these steps:
 
    ```bash
    git add .
-   git commit -m "Add your commit message here"
+   git commit -m "Describe your changes here"
    ```
 
-4. **Push to the branch:**
+4. **Push to your branch:**
 
    ```bash
    git push origin feature/your-feature-name
@@ -95,7 +95,7 @@ If you want to contribute to this repository, please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. Check out the [LICENSE](LICENSE) file for more information.
 
 ## Acknowledgments
 
