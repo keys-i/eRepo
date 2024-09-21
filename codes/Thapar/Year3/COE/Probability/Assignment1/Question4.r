@@ -1,8 +1,8 @@
 calculator = function(x, y, operation) {
-  switch(operation) {
-    "add" = x + y
-    "subtract" = x - y
-    "multiply" = x * y
+  switch(operation,
+    "add" = x + y,
+    "subtract" = x - y,
+    "multiply" = x * y,
     "divide" = if (y != 0) x / y else return("Error: Division by zero.")
   }
 }

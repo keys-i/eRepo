@@ -22,6 +22,7 @@ program focus on the use of following socket programming functions:
 - Close the socket using `close()` system call
 
 > Hint: UDP Client-Server Communication Architecture
+![UDP Client-Server Communication Architecture](../../../../assets/Thapar_Year3_COE_NP_Assignment3.png)
 
 ### Echo Server
   ```c

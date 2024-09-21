@@ -54,10 +54,10 @@
 ## Q4. Write an R program to make a simple calculator which can add, subtract, multiply and divide.
   ```R
   calculator = function(x, y, operation) {
-    switch(operation) {
-      "add" = x + y
-      "subtract" = x - y
-      "multiply" = x * y
+    switch(operation,
+      "add" = x + y,
+      "subtract" = x - y,
+      "multiply" = x * y,
       "divide" = if (y != 0) x / y else return("Error: Division by zero.")
     }
   }

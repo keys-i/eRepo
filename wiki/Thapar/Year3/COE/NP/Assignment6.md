@@ -5,6 +5,7 @@ Each network segment has a corresponding broadcast address. Take the class C net
 segment; and the largest address 192.168.1.255 is the broadcast address in the network segment.
 When we want to send a data packet to this address, all hosts on the network segment will receive
 and process it. <br>
+![Broadcasting](../../../../assets/Thapar_Year3_COE_NP_Assignment6.png)
 
 Note: Broadcast packets are sent and received through UDP sockets.
 The broadcast packet sending process is as follows:<br>
