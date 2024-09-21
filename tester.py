@@ -1,106 +1,108 @@
 import os
-import re
 import subprocess
-import sys
-import hashlib
+import shutil
+from concurrent.futures import ThreadPoolExecutor
+import atexit
 
-def extract_code_blocks(markdown_content):
-    code_block_pattern = re.compile(r'```(c|bash)\n(.*?)\n```', re.DOTALL)
-    return code_block_pattern.findall(markdown_content)
-
-def extract_question_numbers(markdown_content):
-    question_pattern = re.compile(r'##\s*(Q\d+|Assignment \d+)')
-    return question_pattern.findall(markdown_content)
-
-def generate_output_paths(markdown_file, question_number, sub_question_letter, language):
-    file_base = os.path.splitext(os.path.basename(markdown_file))[0]
-    output_folder = os.path.join("codes", file_base, question_number)
-    os.makedirs(output_folder, exist_ok=True)
-    file_extension = 'sh' if language == 'bash' else 'c'
-    code_filename = os.path.join(output_folder, f'{sub_question_letter}_code.{file_extension}')
-    return code_filename
-
-def execute_code(language, code_filename):
+def execute_code(language, code_filename, working_dir):
+    """
+    Execute the given code file based on its programming language.
+    All operations (compilation, execution) happen inside the `working_dir`.
+    """
+    original_cwd = os.getcwd()  # Save the current working directory
     try:
+        # Ensure that the file exists
+        if not os.path.exists(code_filename):
+            print(f"Error: {code_filename} does not exist.")
+            return
+
+        # Change to the working directory where the code file is stored
+        os.chdir(working_dir)
+
         if language == 'bash':
-            # Add shebang line to Bash script
+            # Ensure the bash script has a shebang line
             with open(code_filename, 'r+', encoding='utf-8') as file:
                 content = file.read()
                 if not content.startswith('#!/bin/bash'):
                     file.seek(0, 0)
                     file.write('#!/bin/bash\n' + content)
             
-            # Make the bash script executable
-            subprocess.run(['chmod', '+x', code_filename], check=True)
-            # Run the bash script
-            subprocess.run([code_filename], check=True, capture_output=True, text=True)
+            # Make sure the bash script is executable
+            subprocess.run(['chmod', '+x', os.path.basename(code_filename)], check=True)
+            
+            # Run the Bash script
+            result = subprocess.run([f'./{os.path.basename(code_filename)}'], check=True, capture_output=True, text=True)
+            print(f"Output of Bash script {code_filename}:\n{result.stdout}")
+        
         elif language == 'c':
-            # Compile the C code
-            executable_filename = code_filename[:-2]  # Remove the .c extension
-            subprocess.run(['gcc', code_filename, '-o', executable_filename], check=True)
-            # Run the compiled executable
-            subprocess.run([executable_filename], check=True, capture_output=True, text=True)
-            os.remove(executable_filename)  # Clean up the executable after running
+            # Compile and run the C code in the same folder
+            executable_filename = os.path.basename(code_filename[:-2])  # Remove the .c extension
+            compile_command = ['gcc', os.path.basename(code_filename), '-o', executable_filename]
+            print(f"Compiling C file: {' '.join(compile_command)}")
+            
+            compile_result = subprocess.run(compile_command, check=True, capture_output=True, text=True)
+            print(f"Compilation output: {compile_result.stdout}")
 
-        # Print success message
+            # Execute the compiled C program
+            run_command = [f'./{executable_filename}']
+            print(f"Running C executable: {' '.join(run_command)}")
+            
+            run_result = subprocess.run(run_command, check=True, capture_output=True, text=True)
+            print(f"Output of C program {executable_filename}:\n{run_result.stdout}")
+            
+            # Clean up the executable after running
+            os.remove(executable_filename)
+
         print(f'Successfully executed {code_filename}')
     except subprocess.CalledProcessError as e:
-        # Print error message
         print(f'Error executing {code_filename}: {e}')
-
-def process_markdown_file(markdown_file):
-    try:
-        with open(markdown_file, 'r', encoding='utf-8') as file:
-            content = file.read()
+        print(f"Output: {e.output.decode() if e.output else 'No output available'}")
+    except FileNotFoundError as e:
+        print(f'FileNotFoundError: {e}')
     except OSError as e:
-        print(f"Error reading file {markdown_file}: {e}")
-        return
+        print(f'OSError: {e}')
+    finally:
+        os.chdir(original_cwd)  # Restore the original working directory
 
-    questions = extract_question_numbers(content)
-    code_blocks = extract_code_blocks(content)
 
-    current_question = None
-    sub_question_letter = 'a'
+def cleanup(working_dir):
+    """Delete the working directory upon script termination or error."""
+    if os.path.exists(working_dir):
+        try:
+            shutil.rmtree(working_dir)
+            print(f"Successfully cleaned up {working_dir}.")
+        except Exception as e:
+            print(f"Error during cleanup: {e}")
 
-    for idx, (language, code) in enumerate(code_blocks):
-        # Determine which question this code block belongs to
-        while len(questions) > 0 and content.find(questions[0]) < content.find(code):
-            current_question = questions.pop(0)
-            sub_question_letter = 'a'
 
-        if current_question:
-            question_number = current_question.split('.')[0]  # Get "Q4" from "Q4."
-            code_filename = generate_output_paths(markdown_file, question_number, sub_question_letter, language)
+def execute_in_threads(tasks):
+    """
+    Execute a list of tasks in parallel using threads.
+    Each task is a tuple: (language, code_filename, working_dir)
+    """
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        for task in tasks:
+            language, code_filename, working_dir = task
+            future = executor.submit(execute_code, language, code_filename, working_dir)
+            futures.append(future)
 
-            # Check if the code block has changed using a hash
-            code_hash = hashlib.md5(code.encode('utf-8')).hexdigest()
-            if os.path.exists(code_filename):
-                with open(code_filename, 'r', encoding='utf-8') as existing_code_file:
-                    existing_code = existing_code_file.read()
-                existing_code_hash = hashlib.md5(existing_code.encode('utf-8')).hexdigest()
+        # Wait for all threads to complete
+        for future in futures:
+            try:
+                future.result()  # This will raise any exceptions from the thread
+            except Exception as e:
+                print(f"Error in thread: {e}")
 
-                if code_hash == existing_code_hash:
-                    print(f"No changes in {code_filename}, skipping execution.")
-                    continue
 
-            with open(code_filename, 'w', encoding='utf-8') as code_file:
-                code_file.write(code)
+# Register the cleanup function to be called when the script terminates
+atexit.register(cleanup, working_dir='codes')
 
-            execute_code(language, code_filename)
+# Example usage
+tasks = [
+    ('bash', 'script.sh', '/path/to/working_dir1'),
+    ('c', 'program.c', '/path/to/working_dir2')
+]
 
-            # Increment sub_question_letter for the next block within the same question
-            sub_question_letter = chr(ord(sub_question_letter) + 1)
-
-def scan_markdown_folder(markdown_folder):
-    for root, _, files in os.walk(markdown_folder):
-        for file in files:
-            if file.endswith('.md'):
-                process_markdown_file(os.path.join(root, file))
-
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 script.py <markdown_folder>")
-        sys.exit(1)
-
-    MARKDOWN_FOLDER = sys.argv[1]
-    scan_markdown_folder(MARKDOWN_FOLDER)
+# Execute tasks in parallel
+execute_in_threads(tasks)

@@ -1,5 +1,5 @@
 site_name: My Obsidian Notes
-site_url: https://keys_i.gitlab.io/assignments
+site_url: https://keys-i.github.io/Assignments
 site_dir: public
 docs_dir: ./wiki
 
@@ -21,7 +21,11 @@ markdown_extensions:
   - toc
   - pymdownx.arithmatex
   - pymdownx.tilde
+  - pymdownx.arithmatex
   # Add more extensions as needed
+
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
 
 plugins:
   - search

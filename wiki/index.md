@@ -2,4 +2,4 @@
 
 Assignments are at:
 ## OS
-[[Assignments/OS/index.md|Table of Content]]
+[[Thapar/Year3/ENC/OS/index.md|Table of Content]]
