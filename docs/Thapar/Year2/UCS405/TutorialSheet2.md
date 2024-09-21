@@ -5,7 +5,7 @@ a. No ducks are willing to waltz.<br>
 b. No officers ever decline to waltz.<br>
 c. All my poultry are ducks.<br>
 d. My poultry are not officers.<br>
-e. Does (d) follow from (a), (b), and (c)? If not, is there a correct conclusion?
+e. Does (d) follow from (a), (b), and \(c\)? If not, is there a correct conclusion?
 ### **Solution:**
 Given:<br>
 - \( P(x) \): "x is a duck"<br>
@@ -29,16 +29,16 @@ $$ \forall x(Q(x) \rightarrow P(x)) $$
 This translates: "For all x, if x is one of my poultry, then x is not an officer."
 $$ \forall x(Q(x) \rightarrow \neg R(x)) $$
 
-**e. Does (d) follow from (a), (b), and (c)? If not, is there a correct conclusion?**<br>
+**e. Does (d) follow from (a), (b), and \(c\)? If not, is there a correct conclusion?**<br>
 Let's analyze:<br>
 From (a): &nbsp;&nbsp;&nbsp; \( \forall x(P(x) \rightarrow \neg S(x)) \) (no ducks waltz).<br>
 From (b): &nbsp;&nbsp;&nbsp; \( \forall x(R(x) \rightarrow S(x)) \) (all officers waltz).<br>
-From (c): &nbsp;&nbsp;&nbsp; \( \forall x(Q(x) \rightarrow P(x)) \) (all poultry are ducks)<br><br>
+From \(c\): &nbsp;&nbsp;&nbsp; \( \forall x(Q(x) \rightarrow P(x)) \) (all poultry are ducks)<br><br>
 We want to see if (d) \( \forall x(Q(x) \rightarrow \neg R(x)) \) follows logically.<br><br>
-If all poultry are ducks _(from (c))_, and no ducks waltz _(from (a))_, then none of the poultry waltz.
+If all poultry are ducks _(from \(c\))_, and no ducks waltz _(from (a))_, then none of the poultry waltz.
 However, if all officers waltz _(from (b))_, and the poultry do not waltz, this implies that no poultry
 are officers _(because if they were officers, they would have to waltz, which contradicts (a))_.<br><br>
-Thus, _(d)_ does follow from _(a)_, _(b)_, and _(c)_.
+Thus, _(d)_ does follow from _(a)_, _(b)_, and _\(c\)_.
 
 ---
 
@@ -46,7 +46,7 @@ Thus, _(d)_ does follow from _(a)_, _(b)_, and _(c)_.
 a. No professors are ignorant.<br>
 b. All ignorant people are vain.<br>
 c. No professors are vain.<br>
-d. Does (c) follow from (a) and (b)? Explain.<br>
+d. Does \(c\) follow from (a) and (b)? Explain.<br>
 
 ### **Solution:**
 Given:<br>
@@ -66,18 +66,18 @@ $$ \forall x(Q(x) \rightarrow R(x)) $$
 This translates: "For all x, if x is a professor, then x is not vain."
 $$ \forall x(P(x) \rightarrow \neg R(x)) $$
 
-**d. Does (c) follow from (a) and (b)? Explain.**<br>
+**d. Does \(c\) follow from (a) and (b)? Explain.**<br>
 Let's analyze:<br>
 From (a): &nbsp;&nbsp;&nbsp; \( \forall x(P(x) \rightarrow \neg Q(x)) \) (no professors are ignorant).<br>
 From (b): &nbsp;&nbsp;&nbsp; \( \forall x(Q(x) \rightarrow R(x)) \) (ignorant people are vain).<br>
 
-We want to see if (c) \( \forall x(P(x) \rightarrow \neg R(x)) \) follows logically.<br><br>
+We want to see if \(c\) \( \forall x(P(x) \rightarrow \neg R(x)) \) follows logically.<br><br>
 If no professors are ignorant _(from (a))_, and only ignorant people are vain _(from (b))_, we can infer that no professors are vain.<br>
 Here's the reasoning:<br>
 - From (a), if someone is a professor, they’re not ignorant (\( \neg Q(x) \)).<br>
 - From (b), we know only ignorant people are vain, so if a professor isn’t ignorant, they can’t be vain.
 
-Thus, _(c)_ does follow from _(a)_, and _(b)_.
+Thus, _\(c\)_ does follow from _(a)_, and _(b)_.
 
 ---
 
@@ -364,10 +364,10 @@ These evaluations show how each logical expression holds based on the properties
 ---
 ## Q8. Identify the error or errors in this argument that supposedly shows that if \( \forall 𝑥 (𝑃(𝑥) \bigvee 𝑄(𝑥)) \) is true then \( \forall 𝑥 𝑃(𝑥) \bigvee \forall 𝑥 𝑄(𝑥) \) is true.
 a. \( \forall x \hspace{0.2cm} (P(x) \bigvee Q(x)) \) <span style="float: right;">Premise</span><br>
-b. \( P(c) \bigvee Q(c) \) <span style="float: right;">Universal instantiation from (a)</span><br>
-c. \( P(c) \) <span style="float: right;">Simplification from (b)</span><br>
-d. \( \forall x \hspace{0.2cm} P(x) \) <span style="float: right;">Universal generalization from (c)</span><br>
-e. \( Q(c) \) <span style="float: right;">Simplification from (b)</span><br>
+b. \( P\(c\) \bigvee Q\(c\) \) <span style="float: right;">Universal instantiation from (a)</span><br>
+c. \( P\(c\) \) <span style="float: right;">Simplification from (b)</span><br>
+d. \( \forall x \hspace{0.2cm} P(x) \) <span style="float: right;">Universal generalization from \(c\)</span><br>
+e. \( Q\(c\) \) <span style="float: right;">Simplification from (b)</span><br>
 f. \( \forall x \hspace{0.2cm} Q(x) \) <span style="float: right;">Universal generalization from (e)</span><br>
 g. \( \forall x \hspace{0.2cm} (P(x) \bigvee Q(x)) \) <span style="float: right;">Conjunction from (d) and (f)</span>
 
@@ -375,9 +375,9 @@ g. \( \forall x \hspace{0.2cm} (P(x) \bigvee Q(x)) \) <span style="float: right;
 To understand why this argument doesn't work, let's break it down and identify the errors step by step:
 
 1. **Premise**:<br> \( \forall x \, (P(x) \vee Q(x)) \) states that for every \(x\), either \(P(x)\) or \(Q(x)\) is true. So far, everything seems fine.
-2. **Universal Instantiation**:<br> From the premise, we instantiate with a specific \(c\), so we get \( P(c) \vee Q(c) \). This also holds since it's derived from the original universal statement.
-3. **Simplification**:<br> Here's where things start to get tricky. The argument jumps to assuming \(P(c)\) (and later \(Q(c)\)) without justification. But all we know is that either \(P(c)\) is true, or \(Q(c)\) is true. You can't claim one or the other without further information. So, the error here is in assuming one part of the disjunction without ruling out the other.
-4. **Universal Generalization**:<br> Moving from \(P(c)\) to \( \forall x \, P(x) \) is a mistake. Just because something holds for one instance \(c\), you can't generalize it to all \(x\). This step violates the rules of universal generalization, which requires showing that \(P(x)\) holds for all \(x\), not just one case.
+2. **Universal Instantiation**:<br> From the premise, we instantiate with a specific \(c\), so we get \( P\(c\) \vee Q\(c\) \). This also holds since it's derived from the original universal statement.
+3. **Simplification**:<br> Here's where things start to get tricky. The argument jumps to assuming \(P\(c\)\) (and later \(Q\(c\)\)) without justification. But all we know is that either \(P\(c\)\) is true, or \(Q\(c\)\) is true. You can't claim one or the other without further information. So, the error here is in assuming one part of the disjunction without ruling out the other.
+4. **Universal Generalization**:<br> Moving from \(P\(c\)\) to \( \forall x \, P(x) \) is a mistake. Just because something holds for one instance \(c\), you can't generalize it to all \(x\). This step violates the rules of universal generalization, which requires showing that \(P(x)\) holds for all \(x\), not just one case.
 5. **Conjunction**:<br> Finally, the argument combines \( \forall x \, P(x) \) and \( \forall x \, Q(x) \), but neither of these are valid conclusions from the earlier steps. So, the whole argument falls apart here.
 
 #### In summary:

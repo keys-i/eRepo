@@ -9,15 +9,15 @@ and process it. <br>
 
 Note: Broadcast packets are sent and received through UDP sockets.
 The broadcast packet sending process is as follows:<br>
-a. Create a UDP socket; `socket(AF_INET, SOCK_DGRAM, 0)`<br>
-b. Fill the broadcast information structure; `struct sockaddr_in`<br>
-c. Set socket options to allow broadcast packets to be sent; `setsockopt(,--- ,SO_BROADCAST,-------)`<br>
-d. Send data packet; `sendto()`
+a) Create a UDP socket; `socket(AF_INET, SOCK_DGRAM, 0)`<br>
+b) Fill the broadcast information structure; `struct sockaddr_in`<br>
+c) Set socket options to allow broadcast packets to be sent; `setsockopt(,--- ,SO_BROADCAST,-------)`<br>
+d) Send data packet; `sendto()`
 ### The broadcast packet receiving process is as follows:
-a. Create a UDP socket; `socket(AF_INET, SOCK_DGRAM, 0)`<br>
-b. Fill the broadcast information structure; `struct sockaddr_in`<br>
-c. Bind address and port; `bind()`<br>
-d. Receive data packet; `recvfrom()`
+a) Create a UDP socket; `socket(AF_INET, SOCK_DGRAM, 0)`<br>
+b) Fill the broadcast information structure; `struct sockaddr_in`<br>
+c) Bind address and port; `bind()`<br>
+d) Receive data packet; `recvfrom()`
 
 ### Broadcast Sender
 ```c
