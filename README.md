@@ -22,7 +22,7 @@ Before you begin, ensure you have the following installed:
 
    ```bash
    git clone https://github.com/keys-i/Assignments.git
-   cd your-repo-name
+   cd Assignments
    ```
 
 2. **Install dependencies:**
