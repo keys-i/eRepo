@@ -1,4 +1,4 @@
-[![ci](https://github.com/keys-i/Assignments/actions/workflows/main.yml/badge.svg)](https://github.com/keys-i/Assignments/actions/workflows/main.yml)
+[![website](https://github.com/keys-i/Assignments/actions/workflows/main.yml/badge.svg)](https://github.com/keys-i/Assignments/actions/workflows/main.yml)
 # Assignments Documentation
 
 Welcome to the documentation for the assignments. This repository contains MkDocs documentation for various assignments. Here you'll find information on how to build and deploy the documentation, as well as details about the assignments themselves.
