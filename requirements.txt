@@ -13,6 +13,7 @@ python-markdown-math
 mkdocs-obsidian-interactive-graph-plugin
 mkdocs-callouts
 mkdocs-glightbox
+mkdocs-git-authors-plugin
 mkdocs-obsidian-bridge
 mkdocs-obsidian-support-plugin
 overrides

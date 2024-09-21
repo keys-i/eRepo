@@ -2,12 +2,21 @@
 site_name: My Online Repository
 site_url: https://keys-i.github.io/eRepo
 site_dir: public
-docs_dir: ./wiki
+docs_dir: ./docs
+site_description: A collection of my projects and notes
+
+repo_name: keys-i/eRepo
+repo_url: https://github.com/keys-i/eRepo
 
 # Theme Configuration
 theme:
   name: material
   language: en # Set language to English
+  custom_dir: overrides
+  logo: assets/images/fixed/sitelogo.png
+
+  static_templates:
+    - 404.html
   include_search_page: true
   palette:
     - scheme: default # Light mode
@@ -35,15 +44,31 @@ theme:
     - search.highlight # Highlights search terms in results
     - search.share # Allows sharing of search results
     - search.suggest # Provides search suggestions
+  favicon: assets/images/fixed/favicon.ico
 
 copyright: Copyright &copy; 2024 Keys
+
 extra:
-  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/keys-i
       name: My Github
-
+  repo:
+    url: https://github.com/keys-i/eRepo
+    base: keys-i/eRepo
+    tree: /tree/main
+    blob: /blob/main/docs
+    raw: /raw/scratch/docs
+    viewfile: /blob/scratch/docs
+    viewdir: /tree/scratch/docs
+  analytics:
+    provider: google
+    property: G-ET55XVX3GD
+  generator: false
+  comments:
+    enabled: true
+    mode: utterances
+    type: issues
 # Markdown Extensions
 markdown_extensions:
   - codehilite
@@ -60,9 +85,15 @@ markdown_extensions:
   - pymdownx.emoji # Adds emoji support
   - admonition # Enables warning and note blocks
   - toc:
-      permalink: "#" # Adds permalinks to headings for easier sharing
+      title: "On this page"
+      permalink: true
+      toc_depth: 2
+
   - pymdownx.arithmatex # For mathematical formulas
   - pymdownx.tilde # Enables strikethroughs
+  - pymdownx.caret # Adds caret notation for insertions
+  - pymdownx.mark # Adds mark notation for highlighting
+  - pymdownx.smartsymbols # Adds smart symbols for better typography
 
 # Extra JavaScript for enhanced functionality
 extra_javascript:
@@ -87,4 +118,15 @@ plugins:
   - mermaid2 # Adds diagram support using Mermaid
   - minify: # Optional: Minifies HTML for faster loading
       minify_html: true
+  - git-authors:
+      show_contribution: false
+      show_line_count: false
+      show_email_address: false
+      count_empty_lines: false
+      fallback_to_empty: false
+      sort_authors_by: name
+      authorship_threshold_percent: 20
+      exclude:
+        - index.md
+      enabled: true
   # Add more plugins as needed, such as mkdocs-git-revision-date for versioning
