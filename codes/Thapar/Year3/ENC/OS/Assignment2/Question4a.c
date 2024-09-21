@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     }
 
     char ch;
-    while (ch = fgetc(file) != EOF) {
+    while ((ch = fgetc(file)) != EOF) {
         putchar(ch);
     }
     return 0;

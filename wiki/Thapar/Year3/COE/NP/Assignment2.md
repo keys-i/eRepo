@@ -61,7 +61,7 @@ int close (int sockfd);
 - Close the socket using close() system call
 ### Echo Server
   ```c
-  // Copyright 2024 Keys
+  /* Copyright 2024 Keys */
   #include <stdio.h>
   #include <stdlib.h>
   #include <string.h>
@@ -126,7 +126,7 @@ int close (int sockfd);
 
 ### Echo Client
   ```c
-  // Copyright 2024 Keys
+  /* Copyright 2024 Keys */
   #include <stdio.h>
   #include <stdlib.h>
   #include <unistd.h>
