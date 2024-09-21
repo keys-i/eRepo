@@ -375,13 +375,9 @@ g. \( \forall x \hspace{0.2cm} (P(x) \bigvee Q(x)) \) <span style="float: right;
 To understand why this argument doesn't work, let's break it down and identify the errors step by step:
 
 1. **Premise**:<br> \( \forall x \, (P(x) \vee Q(x)) \) states that for every \(x\), either \(P(x)\) or \(Q(x)\) is true. So far, everything seems fine.
-
 2. **Universal Instantiation**:<br> From the premise, we instantiate with a specific \(c\), so we get \( P(c) \vee Q(c) \). This also holds since it's derived from the original universal statement.
-
 3. **Simplification**:<br> Here's where things start to get tricky. The argument jumps to assuming \(P(c)\) (and later \(Q(c)\)) without justification. But all we know is that either \(P(c)\) is true, or \(Q(c)\) is true. You can't claim one or the other without further information. So, the error here is in assuming one part of the disjunction without ruling out the other.
-
 4. **Universal Generalization**:<br> Moving from \(P(c)\) to \( \forall x \, P(x) \) is a mistake. Just because something holds for one instance \(c\), you can't generalize it to all \(x\). This step violates the rules of universal generalization, which requires showing that \(P(x)\) holds for all \(x\), not just one case.
-
 5. **Conjunction**:<br> Finally, the argument combines \( \forall x \, P(x) \) and \( \forall x \, Q(x) \), but neither of these are valid conclusions from the earlier steps. So, the whole argument falls apart here.
 
 #### In summary:
