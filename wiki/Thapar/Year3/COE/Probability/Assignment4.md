@@ -25,7 +25,7 @@ Find the average number of imperfections per 10 meters of this fabric.
   ```
 
 ## Q2. The time T, in days, required for the completion of a contracted project is a random variable with probability density function \( f(t) = 0.1 e^{(-0.1t)} \) for t > 0 and 0 otherwise. Find the expected value of T.
-Use function integrate( ) to find the expected value of continuous random variable T.
+Use function `integrate()` to find the expected value of continuous random variable T.
   ```R
   f = function(t) {
     return(0.1 * exp(-0.1 * t))
