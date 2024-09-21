@@ -87,14 +87,14 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
   ```
 
 ## Q4. The iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 150 flowers from 3 different species. Load this dataset and do the following:
-(a) Print first few rows of this dataset.
-(b) Find the structure of this dataset.
-(c) Find the range of the data regarding the sepal length of flowers.
-(d) Find the mean of the sepal length.
-(e) Find the median of the sepal length.
-(f) Find the first and the third quartiles and hence the interquartile range.
-(g) Find the standard deviation and variance.
-(h) Try doing the above exercises for sepal.width, petal.length and petal.width.
+(a) Print first few rows of this dataset.<br>
+(b) Find the structure of this dataset.<br>
+(c) Find the range of the data regarding the sepal length of flowers.<br>
+(d) Find the mean of the sepal length.<br>
+(e) Find the median of the sepal length.<br>
+(f) Find the first and the third quartiles and hence the interquartile range.<br>
+(g) Find the standard deviation and variance.<br>
+(h) Try doing the above exercises for sepal.width, petal.length and petal.width.<br>
 (i) Use the built-in function summary on the dataset Iris.
   ```R
   data(iris)

@@ -1,6 +1,7 @@
-# Assignment 4
+# Assignment 3
 
-## Q1. Roll 12 dice simultaneously, and let X denotes the number of 6’s that appear. Calculate the probability of getting 7, 8 or 9, 6’s using R. (Try using the function pbinom; If we set S = {get a 6 on one roll}, P(S) = 1/6 and the rolls constitute Bernoulli trials; thus X ∼ binom(size=12, prob=1/6) and we are looking for P(7 ≤ X ≤ 9).
+## Q1. Roll 12 dice simultaneously, and let X denotes the number of 6’s that appear. Calculate the probability of getting 7, 8 or 9, 6’s using R.
+(Try using the function pbinom; If we set S = {get a 6 on one roll}, \( P(S) = 1/6 \) and the rolls constitute Bernoulli trials; thus \( X ∼ binom(size=12, prob=1/6) \) and we are looking for \( P(7 ≤ X ≤ 9) \).
   ```R
   size = 12
   prob = 1/6
@@ -20,7 +21,7 @@
   cat("Percentage of students scoring 84 or more in the exam is: ", p_84_or_more * 100)
   ```
 
-## Q3. On the average, five cars arrive at a particular car wash every hour. Let X count the number of cars that arrive from 10AM to 11AM, then X ∼Poisson(λ = 5). What is probability that no car arrives during this time. Next, suppose the car wash above is in operation from 8AM to 6PM, and we let Y be the number of customers that appear in this period. Since this period covers a total of 10 hours, we get that Y ∼ Poisson(λ = 5 × 10 = 50). What is the probability that there are between 48 and 50 customers, inclusive?
+## Q3. On the average, five cars arrive at a particular car wash every hour. Let X count the number of cars that arrive from 10AM to 11AM, then \( X ∼ Poisson(λ = 5) \). What is probability that no car arrives during this time. Next, suppose the car wash above is in operation from 8AM to 6PM, and we let Y be the number of customers that appear in this period. Since this period covers a total of 10 hours, we get that \( Y ∼ Poisson(λ = 5 × 10 = 50) \). What is the probability that there are between 48 and 50 customers, inclusive?
   ```R
   # a. Probability that no car arrives between 10 AM and 11 AM
   p_no_car = dpois(0, lambda=5)
@@ -47,11 +48,10 @@
   ```
 
 ## Q5. A recent national study showed that approximately 44.7% of college students have used Wikipedia as a source in at least one of their term papers. Let X equal the number of students in a random sample of size n = 31 who have used Wikipedia as a source.
-(a) How is X distributed?
-(b) Sketch the probability mass function.
-(c) Sketch the cumulative distribution function.
+(a) How is X distributed?<br>
+(b) Sketch the probability mass function.<br>
+(c) Sketch the cumulative distribution function.<br>
 (d) Find mean, variance and standard deviation of X
-
   ```R
   # a. How is X distributed?
   cat("X ~ Binomial(n = 31, p = 0.447)\n")
