@@ -1,6 +1,6 @@
 x = 1:10
 y = x^2
-plot(x, y, main="Basic Plot", xlab="x-axis", ylab="y-axis", col="blue", pch=19))
+plot(x, y, main="Basic Plot", xlab="x-axis", ylab="y-axis", col="blue", pch=19)
 
 # Box Plot
 data <- list(A = rnorm(100, mean = 5), B = rnorm(100, mean = 10), C = rnorm(100, mean = 15))

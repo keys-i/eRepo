@@ -8,4 +8,4 @@ Y = function(x) {
 
 expected_value_y = sum(p_x * Y(x))
 
-cat("Expected value of Y is: ", expected_value_y, "\n")
+cat("3. Expected value of Y is:", expected_value_y, "\n")

@@ -30,5 +30,6 @@ for (x in x_values) {
 # Adjust variance by subtracting mean squared
 variance_Y = variance_Y - expected_value_Y^2
 
-cat("Expected value of Y is: ", expected_value_Y, "\n")
-cat("Variance of Y is: ", variance_Y, "\n")
+cat("5. Expected value and Variance of Y\n")
+cat("Expected value of Y is:", expected_value_Y, "\n")
+cat("Variance of Y is:", variance_Y, "\n")

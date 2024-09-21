@@ -4,4 +4,4 @@ gmode = function(v) {
 }
 
 v = c(2, 3, 3, 5, 5, 5, 7)
-gmode(v)
+cat("5. Mode among [", paste(v, collapse = ", "), "] is:", gmode(v), "\n")

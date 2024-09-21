@@ -15,12 +15,12 @@ Find the average number of imperfections per 10 meters of this fabric.
 
   # Calculate the expected value using weighted.mean
   expected_value = weighted.mean(x, p_x)
-  expected_value_matrix = c(x %*% p_x)
+  expected_value_matrix <- c(x %*% p_x)
 
   if (expected_value == expected_value_matrix) {
-    cat("Expected values are the same")
+    cat("1. Expected values are the same\n")
   } else {
-    cat("Expected values are different")
+    cat("1. Expected values are different\n")
   }
   ```
 
@@ -33,7 +33,7 @@ Use function `integrate()` to find the expected value of continuous random varia
 
   expected_value_t = integrate(function(t) t * f(t), lower = 0, upper = Inf)$value
 
-  cat("Expected value of T is: ", expected_value_t)
+  cat("2. Expected value of T is: ", expected_value_t, "\n")
   ```
 
 ## Q3. A bookstore purchases three copies of a book at $6.00 each and sells them for $12.00 each. Unsold copies are returned for $2.00 each. Let X = {number of copies sold} and Y = {net revenue}. If the probability mass function of X is
@@ -54,29 +54,31 @@ Find the expected value of Y.
 
   expected_value_y = sum(p_x * Y(x))
 
-  cat("Expected value of Y is: ", expected_value_y, "\n")
+  cat("3. Expected value of Y is:", expected_value_y, "\n")
   ```
 
 ## Q4. Find the first and second moments about the origin of the random variable X with probability density function \( f(x) = 0.5e^{-|x|} \), 1 < x < 10 and 0 otherwise. Further use the results to find Mean and Variance.
 (kth moment = \( E(X^k) \) , Mean = first moment and Variance = second moment – \( Mean^2 \).
   ```R
+  # Define the probability density function f(x)
   f_x = function(x) {
     return(0.5 * exp(-abs(x)))
   }
 
-  # First moment (Mean)
+  # Calculate the first moment (Mean)
   first_moment = integrate(function(x) x * f_x(x), lower = 1, upper = 10)$value
 
-  # Second moment
+  # Calculate the second moment
   second_moment = integrate(function(x) x^2 * f_x(x), lower = 1, upper = 10)$value
 
   # Mean and variance
-  mean = first_moment
-  variance = second_moment - mean_X^2
+  mean_x = first_moment
+  variance_x = second_moment - mean_x^2
 
   # Output the results
-  cat("Mean of X is: ", mean, "\n")
-  cat("Variance of X is: ", variance, "\n")
+  cat("4. Mean and Variance of X\n")
+  cat("Mean of X is:", mean_x, "\n")
+  cat("Variance of X is:", variance_x, "\n")
   ```
 
 ## Q5. Let X be a geometric random variable with probability distribution
@@ -118,6 +120,7 @@ Y for \( X = 1,2,3,4,5 \).
   # Adjust variance by subtracting mean squared
   variance_Y = variance_Y - expected_value_Y^2
 
-  cat("Expected value of Y is: ", expected_value_Y, "\n")
-  cat("Variance of Y is: ", variance_Y, "\n")
+  cat("5. Expected value and Variance of Y\n")
+  cat("Expected value of Y is:", expected_value_Y, "\n")
+  cat("Variance of Y is:", variance_Y, "\n")
   ```

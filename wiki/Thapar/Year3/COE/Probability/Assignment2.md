@@ -11,21 +11,20 @@ Generate a sample space for the next 10 surgical procedures performed.
 ### 1. (a)
   ```R
   chest = c(rep("gold", 20), rep("silver", 30), rep("bronze", 50))
-
   # Randomly draw 10 coins
   draw = sample(chest, size=10, replace=FALSE)
 
-  cat("Sample Size: ", draw)
+  cat("1. (a) Sample Size:", draw, "\n");
   ```
 
 ### 1. (b)
   ```R
-  outcomes = c("'Success", "'Failure")
+  outcomes = c("Success", "Failure")
   probabilities = c(0.9, 0.1)
 
   surgery_out = sample(outcomes, size=10, replace=TRUE, prob=probabilities)
 
-  cat("Sample Space for next 10 surgical procedures: ", surgery_out)
+  cat("   (b) Sample Space for next 10 surgical procedures:", surgery_out, "\n")
   ```
 
 ## Q2. A room has n people, and each has an equal chance of being born on any of the 365 days of the year. (For simplicity, we’ll ignore leap years). What is the probability that two people in the room have the same birthday?
@@ -44,8 +43,9 @@ Generate a sample space for the next 10 surgical procedures performed.
     return (count / trials)
   }
 
+  cat("2. (a) Probability of matching birthdays for n = 1 to 50:\n")
   for (n in 1:50) {
-    cat("For n =", n, "probability of matching birthdays is:", birth_sim(n), "\n")
+    cat("    For n =", n, "probability of matching birthdays is:", birth_sim(n), "\n")
   }
   ```
 
@@ -59,7 +59,7 @@ Generate a sample space for the next 10 surgical procedures performed.
     return(n)
   }
 
-  small_n()
+  cat("   (b) Smallest n for which probability of matching birthdays is just above 50% is:", small_n(), "\n")
   ```
 
 ## Q3. Write an R function for computing conditional probability. Call this function to do the following problem:
@@ -71,20 +71,20 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
     return(p_a_and_b / p_b)
   }
 
-  p_cloud = 0.4
+  p_cloudy = 0.4
   p_rain = 0.2
   p_cloud_and_rain = 0.85
 
-  p_cloudy_given_rain = 0.85
+  p_cloudy_given_rain <- 0.85
 
   # Calculate P(rain and cloudy)
-  p_rain_and_cloudy = p_rain * p_cloudy_given_rain
+  p_rain_and_cloudy <- p_rain * p_cloudy_given_rain
 
   # Calculate conditional probability
-  p_rain_given_cloudy = conditional_prob(p_rain_and_cloudy, p_cloudy)
+  p_rain_given_cloudy <- cond_prob(p_rain_and_cloudy, p_cloudy)
 
   # Output the result
-  cat("Probability of Rain Given Cloudy is: ",p_rain_given_cloudy)
+  cat("3. Probability of Rain Given Cloudy is:", p_rain_given_cloudy, "\n")
   ```
 
 ## Q4. The iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 150 flowers from 3 different species. Load this dataset and do the following:
@@ -100,36 +100,47 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
   ```R
   data(iris)
 
-  # a.
-  head(iris)
+  cat("4. (a) Head of the iris dataset:\n")
+  # 4. (a) Displaying the first few rows of the iris dataset
+  print(head(iris))
 
-  # b.
+  cat("\n4. (b) Structure of the iris dataset:\n")
+  # 4. (b) Displaying the structure of the iris dataset
   str(iris)
 
-  # c.
-  range(iris$Sepal.Length)
+  cat("\n4. (c) Range of Sepal.Length:\n")
+  # 4. (c) Finding the range of Sepal.Length
+  cat("Range:", range(iris$Sepal.Length), "\n")
 
-  # d.
-  mean(iris$Sepal.Length)
+  cat("\n4. (d) Mean of Sepal.Length:\n")
+  # 4. (d) Calculating the mean of Sepal.Length
+  cat("Mean:", mean(iris$Sepal.Length), "\n")
 
-  # e.
-  median(iris$Sepal.Length)
+  cat("\n4. (e) Median of Sepal.Length:\n")
+  # 4. (e) Calculating the median of Sepal.Length
+  cat("Median:", median(iris$Sepal.Length), "\n")
 
-  # f.
-  quartiles = quantile(iris$Sepal.Length, probs = c(0.25, 0.75))
-  IQR = quantiles[2] - quantiles[1]
+  cat("\n4. (f) Interquartile Range of Sepal.Length:\n")
+  # 4. (f) Calculating the Interquartile Range (IQR) of Sepal.Length
+  quartiles <- quantile(iris$Sepal.Length, probs = c(0.25, 0.75))
+  IQR <- quartiles[2] - quartiles[1]
+  cat("1st Quartile:", quartiles[1], "3rd Quartile:", quartiles[2], "\n")
+  cat("Interquartile Range (IQR):", IQR, "\n")
 
-  # g.
-  sd(iris$Sepal.Length)
-  var(iris$Sepal.Length)
+  cat("\n4. (g) Standard Deviation and Variance of Sepal.Length:\n")
+  # 4. (g) Calculating the standard deviation and variance of Sepal.Length
+  cat("Standard Deviation:", sd(iris$Sepal.Length), "\n")
+  cat("Variance:", var(iris$Sepal.Length), "\n")
 
-  # h.
-  mean(iris$Sepal.Width)
-  mean(iris$Petal.Length)
-  mean(iris$Petal.Width)
+  cat("\n4. (h) Mean of Sepal.Width, Petal.Length, and Petal.Width:\n")
+  # 4. (h) Calculating the mean of Sepal.Width, Petal.Length, and Petal.Width
+  cat("Mean of Sepal.Width:", mean(iris$Sepal.Width), "\n")
+  cat("Mean of Petal.Length:", mean(iris$Petal.Length), "\n")
+  cat("Mean of Petal.Width:", mean(iris$Petal.Width), "\n")
 
-  # i.
-  summary(iris)
+  cat("\n4. (i) Summary of the Iris Dataset:\n")
+  # 4. (i) Displaying the summary of the iris dataset
+  print(summary(iris))
   ```
 
 ## Q5. R does not have a standard in-built function to calculate mode. So we create a user function to calculate mode of a data set in R. This function takes the vector as input and gives the mode value as output.
@@ -140,5 +151,5 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
   }
 
   v = c(2, 3, 3, 5, 5, 5, 7)
-  gmode(v)
+  cat("5. Mode among [", paste(v, collapse = ", "), "] is:", gmode(v), "\n")
   ```

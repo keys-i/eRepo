@@ -4,4 +4,4 @@ f = function(t) {
 
 expected_value_t = integrate(function(t) t * f(t), lower = 0, upper = Inf)$value
 
-cat("Expected value of T is: ", expected_value_t)
+cat("2. Expected value of T is:", expected_value_t, "\n")

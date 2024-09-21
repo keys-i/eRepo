@@ -11,8 +11,10 @@ birth_sim = function(n, trials = 10000) {
   return (count / trials)
 }
 
+cat("2. (a) Probability of matching birthdays for n = 1 to 50:\n")
 for (n in 1:50) {
-  cat("For n =", n, "probability of matching birthdays is:", birth_sim(n), "\n")
+  cat("    For n =", n, "probability of matching birthdays is:", birth_sim(n), "\n")
+}
 
 #  2. (b)
 small_n = function() {
@@ -23,4 +25,4 @@ small_n = function() {
   return(n)
 }
 
-small_n()
+cat("   (b) Smallest n for which probability of matching birthdays is just above 50% is:", small_n(), "\n")

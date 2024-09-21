@@ -11,4 +11,4 @@ factorial_c = function(n) {
 n = as.integer(readline(prompt="Enter a number: "))
 
 res = factorial_c(n)
-cat("Factorial of ", n, " is: ", res, "\n")
+cat("Factorial of", n, "is:", res, "\n")

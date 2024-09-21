@@ -7,7 +7,7 @@ expected_value = weighted.mean(x, p_x)
 expected_value_matrix <- c(x %*% p_x)
 
 if (expected_value == expected_value_matrix) {
-  cat("Expected values are the same")
+  cat("1. Expected values are the same\n")
 } else {
-  cat("Expected values are different")
+  cat("1. Expected values are different\n")
 }
