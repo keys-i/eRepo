@@ -55,7 +55,6 @@ markdown_extensions:
       permalink: "#" # Adds permalinks to headings for easier sharing
   - pymdownx.arithmatex # For mathematical formulas
   - pymdownx.tilde # Enables strikethroughs
-    # Add more extensions as needed
 
 # Extra JavaScript for enhanced functionality
 extra_javascript:
