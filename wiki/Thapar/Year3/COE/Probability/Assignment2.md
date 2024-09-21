@@ -132,5 +132,12 @@ If it’s cloudy outside on a given day, what is the probability that it will ra
   ```
 
 ## Q5. R does not have a standard in-built function to calculate mode. So we create a user function to calculate mode of a data set in R. This function takes the vector as input and gives the mode value as output.
- ```R
- ```
+  ```R
+  gmode = function(v) {
+    uniqv = unique(v)
+    uniqv[which.max(tabulate(match(v, uniqv)))]
+  }
+
+  v = c(2, 3, 3, 5, 5, 5, 7)
+  gmode(v)
+  ```
