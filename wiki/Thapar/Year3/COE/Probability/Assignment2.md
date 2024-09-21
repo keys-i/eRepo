@@ -3,10 +3,11 @@
 ## Q1.
 (a) Suppose there is a chest of coins with 20 gold, 30 silver and 50 bronze coins.
 You randomly draw 10 coins from this chest. Write an R code which will give us the
-sample space for this experiment. (use of sample(): an in-built function in R)
+sample space for this experiment.<br>
+(use of `sample()`: an in-built function in R)<br>
 (b) In a surgical procedure, the chances of success and failure are 90% and 10% respectively.
 Generate a sample space for the next 10 surgical procedures performed.
-(use of prob(): an in-built function in R)
+<br>(use of `prob()`: an in-built function in R)
 ### 1. (a)
   ```R
   chest = c(rep("gold", 20), rep("silver", 30), rep("bronze", 50))
@@ -28,7 +29,7 @@ Generate a sample space for the next 10 surgical procedures performed.
   ```
 
 ## Q2. A room has n people, and each has an equal chance of being born on any of the 365 days of the year. (For simplicity, we’ll ignore leap years). What is the probability that two people in the room have the same birthday?
-(a) Use an R simulation to estimate this for various n.
+(a) Use an R simulation to estimate this for various n.<br>
 (b) Find the smallest value of n for which the probability of a match is greater than 5.
 ### 2. (a)
   ```R

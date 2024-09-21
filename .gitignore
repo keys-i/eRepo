@@ -1,5 +1,4 @@
 # Custom / Testing
-codes/
 public/
 
 # Byte-compiled / optimized / DLL files
@@ -81,4 +80,3 @@ dmypy.json
 *.swp
 *.swo
 .DS_Store
-
