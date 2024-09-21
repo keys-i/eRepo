@@ -12,6 +12,9 @@ Assignments are at:
 #### Probability and statistics
 [[Thapar/Year3/COE/Probability/index.md|Table of Content]]
 
+#### Network Programming
+[[Thapar/Year3/COE/NP/index.md|Table of Content]]
+
 ### ENC
 #### OS
 [[Thapar/Year3/ENC/OS/index.md|Table of Content]]
