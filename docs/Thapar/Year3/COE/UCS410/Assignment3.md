@@ -50,7 +50,7 @@
 ## Q5. A recent national study showed that approximately 44.7% of college students have used Wikipedia as a source in at least one of their term papers. Let X equal the number of students in a random sample of size n = 31 who have used Wikipedia as a source.
 (a) How is X distributed?<br>
 (b) Sketch the probability mass function.<br>
-\(c\) Sketch the cumulative distribution function.<br>
+(c​) Sketch the cumulative distribution function.<br>
 (d) Find mean, variance and standard deviation of X
   ```R
   # 5. (a) Distribution of X

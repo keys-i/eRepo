@@ -283,7 +283,7 @@ int main(int argc, char *argv[]) {
 
 ```
 
-### (c) Write a program to create a new file, write a user-specified string into it, and then read the contents of the file and display them.
+### (c​) Write a program to create a new file, write a user-specified string into it, and then read the contents of the file and display them.
 
 ```c
 /* Copyright 2024 Keys */
