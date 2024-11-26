@@ -1,0 +1,332 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Home",
+      "symbolSize": 4,
+      "value": "/eRepo/"
+    },
+    {
+      "id": "1",
+      "name": "DMS",
+      "symbolSize": 3,
+      "value": "/eRepo/Thapar/Year2/UCS405/"
+    },
+    {
+      "id": "2",
+      "name": "Tutorial Sheet 1",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year2/UCS405/TutorialSheet1/"
+    },
+    {
+      "id": "3",
+      "name": "Tutorial Sheet 2",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year2/UCS405/TutorialSheet2/"
+    },
+    {
+      "id": "4",
+      "name": "Probability",
+      "symbolSize": 9,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/"
+    },
+    {
+      "id": "5",
+      "name": "Assignment 1",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment1/"
+    },
+    {
+      "id": "6",
+      "name": "Assignment 2",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment2/"
+    },
+    {
+      "id": "7",
+      "name": "Assignment 3",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment3/"
+    },
+    {
+      "id": "8",
+      "name": "Assignment 4",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment4/"
+    },
+    {
+      "id": "9",
+      "name": "Assignment 5",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment5/"
+    },
+    {
+      "id": "10",
+      "name": "Assignment 6",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment6/"
+    },
+    {
+      "id": "11",
+      "name": "Assignment 7",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment7/"
+    },
+    {
+      "id": "12",
+      "name": "Assignment 8",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS410/Assignment8/"
+    },
+    {
+      "id": "13",
+      "name": "NP",
+      "symbolSize": 8,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/"
+    },
+    {
+      "id": "14",
+      "name": "Assignment 1",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment1/"
+    },
+    {
+      "id": "15",
+      "name": "Assignment 2",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment2/"
+    },
+    {
+      "id": "16",
+      "name": "Assignment 3",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment3/"
+    },
+    {
+      "id": "17",
+      "name": "Assignment 4",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment4/"
+    },
+    {
+      "id": "18",
+      "name": "Assignment 5",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment5/"
+    },
+    {
+      "id": "19",
+      "name": "Assignment 6",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment6/"
+    },
+    {
+      "id": "20",
+      "name": "Assignment 7",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/COE/UCS413/Assignment7/"
+    },
+    {
+      "id": "21",
+      "name": "OS",
+      "symbolSize": 12,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/"
+    },
+    {
+      "id": "22",
+      "name": "Assignment 1",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment1/"
+    },
+    {
+      "id": "23",
+      "name": "Assignment 10",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment10/"
+    },
+    {
+      "id": "24",
+      "name": "Assignment 11",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment11/"
+    },
+    {
+      "id": "25",
+      "name": "Assignment 2",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment2/"
+    },
+    {
+      "id": "26",
+      "name": "Assignment 3",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment3/"
+    },
+    {
+      "id": "27",
+      "name": "Assignment 4",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment4/"
+    },
+    {
+      "id": "28",
+      "name": "Assignment 5",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment5/"
+    },
+    {
+      "id": "29",
+      "name": "Assignment 6",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment6/"
+    },
+    {
+      "id": "30",
+      "name": "Assignment 7",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment7/"
+    },
+    {
+      "id": "31",
+      "name": "Assignment 8",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment8/"
+    },
+    {
+      "id": "32",
+      "name": "Assignment 9",
+      "symbolSize": 1,
+      "value": "/eRepo/Thapar/Year3/ENC/UNC303/Assignment9/"
+    }
+  ],
+  "links": [
+    {
+      "source": "0",
+      "target": "1"
+    },
+    {
+      "source": "0",
+      "target": "4"
+    },
+    {
+      "source": "0",
+      "target": "13"
+    },
+    {
+      "source": "0",
+      "target": "21"
+    },
+    {
+      "source": "1",
+      "target": "2"
+    },
+    {
+      "source": "1",
+      "target": "3"
+    },
+    {
+      "source": "4",
+      "target": "5"
+    },
+    {
+      "source": "4",
+      "target": "6"
+    },
+    {
+      "source": "4",
+      "target": "7"
+    },
+    {
+      "source": "4",
+      "target": "8"
+    },
+    {
+      "source": "4",
+      "target": "9"
+    },
+    {
+      "source": "4",
+      "target": "10"
+    },
+    {
+      "source": "4",
+      "target": "11"
+    },
+    {
+      "source": "4",
+      "target": "12"
+    },
+    {
+      "source": "13",
+      "target": "14"
+    },
+    {
+      "source": "13",
+      "target": "15"
+    },
+    {
+      "source": "13",
+      "target": "16"
+    },
+    {
+      "source": "13",
+      "target": "17"
+    },
+    {
+      "source": "13",
+      "target": "18"
+    },
+    {
+      "source": "13",
+      "target": "19"
+    },
+    {
+      "source": "13",
+      "target": "20"
+    },
+    {
+      "source": "21",
+      "target": "22"
+    },
+    {
+      "source": "21",
+      "target": "25"
+    },
+    {
+      "source": "21",
+      "target": "26"
+    },
+    {
+      "source": "21",
+      "target": "27"
+    },
+    {
+      "source": "21",
+      "target": "28"
+    },
+    {
+      "source": "21",
+      "target": "29"
+    },
+    {
+      "source": "21",
+      "target": "30"
+    },
+    {
+      "source": "21",
+      "target": "31"
+    },
+    {
+      "source": "21",
+      "target": "32"
+    },
+    {
+      "source": "21",
+      "target": "23"
+    },
+    {
+      "source": "21",
+      "target": "24"
+    }
+  ]
+}
