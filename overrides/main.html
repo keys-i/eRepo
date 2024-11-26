@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block extrahead %}
+{% extends "base.html" %}
+{% block extrahead %}
 <!--   <link rel="stylesheet" href="{{config.site_url}}{{ 'assets/stylesheets/main.c296cc61.min.css' | url }}"> -->
 {% if page and page.meta and page.meta.tags %} {% set keywords = page.meta.tags
 %}
@@ -23,6 +24,19 @@ page.meta.image %} {% set image = config.site_url ~ page.meta.image %} {% endif
 <meta property="og:image:width" content="256" />
 <meta property="og:image:height" content="256" />
 {% endblock %}
+
+<!-- printing pdf -->
+{% block repo %}
+    {% if page.url_to_pdf %}
+        <li class="nav-item">
+            <a href="{{ page.url_to_pdf }}" title="Site PDF" class="nav-link">
+                <i class="fas fa-file-pdf"></i> PDF
+            </a>
+        </li>
+    {% endif %}
+
+{{ super() }}
+{% endblock repo %}
 
 <!-- outdated version - remove suffix: off -->
 {% block outdatedoff %} You're not viewing the latest version.

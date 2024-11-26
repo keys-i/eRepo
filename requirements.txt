@@ -16,4 +16,5 @@ mkdocs-glightbox
 mkdocs-git-authors-plugin
 mkdocs-obsidian-bridge
 mkdocs-obsidian-support-plugin
+mkdocs-print-site-plugin
 overrides

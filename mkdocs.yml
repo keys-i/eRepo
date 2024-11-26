@@ -129,4 +129,5 @@ plugins:
       exclude:
         - index.md
       enabled: true
+  - print-site
   # Add more plugins as needed, such as mkdocs-git-revision-date for versioning
